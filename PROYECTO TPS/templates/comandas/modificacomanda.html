@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/CSS/estilos.css">
+    <script src="/Static/JS/Javascript.js"></script>
+    <title>Hotel Maravilla Natural</title>
+</head>
+<ul class="topnav">
+    <li><a href="/principal">Inicio</a></li>
+    <li><a href="#">Registro</a></li>
+    <li><a href="/servicios">Servicios</a></li>
+    <li><a href="/productos">Productos</a></li>
+    <li><a href="/Catalogo">Vehiculos</a></li>
+    <li><a class="active" href="/comandas">Ventas</a></li>
+    <li><a href="facturas">Facturación</a></li>
+    <li><a href="/">Salir</a></li>
+    <li class="right"><img src="/uploads/logo.jpg" alt=""></li>
+</ul>
+<br>
+<div class="container">
+    <form action="/actualizacomanda" method="post" enctype="multipart/form-data">
+        <h3>Modificar datos de Venta</h3>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                <label for="numero"><b>Comanda</b></label><br>
+                <input readonly value="{{com[0]}}" class="form-control" type="number" name="numero">
+                {{mensaje}}
+                <br>
+                <label for="idcodigo"><b>Categoria</b></label>
+                <input  value="{{com[1]}}" class="form-control" type="text" name="idcodigo">
+                <br>
+                <label for="descripItem"><b>Producto</b></label>
+                <input  required value="{{com[2]}}" class="form-control" type="number" name="descripItem">
+                <br>
+                <label for="idRegistro"><b>Registro</b></label>
+                <input  required value="{{com[3]}}" class="form-control" type="number" name="idRegistro">
+                <br>
+                </div>
+            <div class="col-4">
+                <label for="idHabitacion"><b>Habitación</b></label>
+                <input  required value="{{com[4]}}" class="form-control" type="text" name="idHabitacion">
+                <br>
+                <label for="fecha"><b>Fecha</b></label>
+                <input  required value="{{com[5]}}" class="form-control" type="text" name="fecha">
+                <br>
+                <label for="cantidad"><b>Cantidad</b></label>
+                <input  required value="{{com[6]}}" class="form-control" type="number" name="cantidad">
+                <br>
+                <label for="valor"><b>Valor</b></label>
+                <input  required value="{{com[7]}}" class="form-control" type="number" name="valor">
+                <br>
+                </div>
+            <div class="col-4">
+                <label for="subtotal"><b>Subtotal</b></label>
+                <input  required step="any" value="{{com[8]}}" class="form-control" type="number" name="subtotal">
+                <br>
+                <label for="estado"><b>Estado</b></label><br>
+                <input required value="{{com[9]}}" class="form-control" type="text" name="estado">
+                <br>
+                <label for="foto"><b>Foto</b></label><br>
+                <input value="{{com[10]}}" class="form-control" type="file" name="foto">
+                <br>
+                <img width="200" height="200" src="/uploads/{{com[10]}}" alt=""><br><br>
+                <input type="submit" class="btn btn-success" class="bi bi-arrow-left" value="Guardar">
+                <a href="/comandas" class="btn btn-primary"> Regresar</a>
+            </div>
+    </form>
+</div>    
+</body>
+</html>

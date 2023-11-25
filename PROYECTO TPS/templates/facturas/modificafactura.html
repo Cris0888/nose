@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/CSS/estilos.css">
+    <script src="/Static/JS/Javascript.js"></script>
+    <title>Hotel Maravilla Natural</title>
+</head>
+<ul class="topnav">
+    <li><a href="/principal">Inicio</a></li>
+    <li><a href="#">Registro</a></li>
+    <li><a href="/servicios">Servicios</a></li>
+    <li><a href="/productos">Productos</a></li>
+    <li><a href="/Catalogo">Vehiculos</a></li>
+    <li><a href="/comandas">Ventas</a></li>
+    <li><a class="active" href="facturas">Facturación</a></li>
+    <li><a href="/">Salir</a></li>
+    <li class="right"><img src="/uploads/logo.jpg" alt=""></li>
+</ul>>
+</div>
+<br>
+<div class="container">
+    <form action="/actualizafactura" method="post" enctype="multipart/form-data">
+        <h3>Modificar factura</h3>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                <label for="numero"><b>Factura No</b></label><br>
+                <input readonly value="{{fact[0]}}" class="form-control" type="number" name="numero">
+                {{mensaje}}
+                <br>
+                <label for="idRegistro"><b>Registro No</b></label>
+                <input value="{{fact[1]}}" class="form-control" type="text" name="idRegistro">
+                <br></div>
+                <div class="col-4">
+                <label for="idCliente"><b>Cliente No</b></label>
+                <input required value="{{fact[2]}}" class="form-control" type="number" name="idCliente">
+                <br>
+                <label for="idcomanda"><b>Comanda No</b></label>
+                <input required value="{{fact[3]}}" class="form-control" type="number" name="idcomanda">
+                <br>
+            </div>
+            <div class="col-4">
+                <label for="fecha"><b>Fecha</b></label>
+                <input required value="{{fact[4]}}" class="form-control" type="text" name="fecha">
+                <br>
+                <label for="total"><b>Total</b></label>
+                <input required value="{{fact[5]}}" class="form-control" type="number" name="total">
+                <br>
+                <input type="submit" class="btn btn-success" class="bi bi-arrow-left" value="Guardar">
+                <a href="/facturas" class="btn btn-primary"> Regresar</a>
+            </div>
+    </form>
+    </div>
+    </body>
+    </html>

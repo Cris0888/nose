@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/CSS/estilos.css">
+    <script src="/Static/JS/Javascript.js"></script>
+    <title>Hotel Maravilla Natural</title>
+</head>
+<ul class="topnav">
+    <li><a href="/principal">Inicio</a></li>
+    <li><a href="#">Registro</a></li>
+    <li><a href="/servicios">Servicios</a></li>
+    <li><a href="/productos">Productos</a></li>
+    <li><a href="/Catalogo">Vehiculos</a></li>
+    <li><a class="active" href="/comandas">Ventas</a></li>
+    <li><a href="facturas">Facturación</a></li>
+    <li><a href="/">Salir</a></li>
+    <li class="right"><img src="/uploads/logo.jpg" alt=""></li>
+</ul>>
+<br>
+<div class="container">
+    <form action="/guardacomanda" method="post" enctype="multipart/form-data">
+        <h3>Datos de la Venta</h3>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                {{mensaje}}
+                <label for="numero"><b>Comanda Productos</b></label><br>
+                <input required type="number" class="form-control" name="numero">
+                <br>
+
+            <label for="idcodigo"><b>Categoria</b></label><br>
+            <select required class="form-control" name="idcodigo">
+                <option value="Kiosko">Kiosko</option>
+                <option value="Minibar">Minibar</option>
+                <option value="Minimarket">Minimarket</option>
+                <option value="Restaurante">Restaurante</option>
+                <option value="Room Service">Room Service</option>
+                </option>
+            </select>
+                <br>
+                <label for="descripItem"><b>Producto</b></label>
+                <select required class="form-control" name="descripItem">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="2">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    </option>
+                </select>
+                <br>
+                <label for="idRegistro"><b>Registro</b></label><br>
+                <select required class="form-control" name="idRegistro">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="2">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    </option>
+                </select>
+                <br>
+            </div>
+            <div class="col-4">
+                <label for="idHabitacion"><b>Habitación</b></label><br>
+                <select required class="form-control" name="idHabitacion">
+                <option value="101">101</option>
+                <option value="202">202</option>
+                <option value="301">301</option>
+                <option value="405">405</option>
+                <option value="501">501</option>
+                </option>
+            </select>
+                <br>
+                <label for="fecha"><b>Fecha</b></label><br>
+                <input required step="any" type="date" class="form-control" name="fecha">
+                <br>  
+                <label for="cantidad"><b>Cantidad</b></label><br>
+                <input required step="any" type="number" class="form-control" name="cantidad">
+                <br>
+                <label for="valor"><b>Valor</b></label><br>
+                <input required step="any" type="number" class="form-control" name="valor">
+                <br>
+                </div>
+            <div class="col-4">
+                <label for="subtotal"><b>Subtotal</b></label><br>
+                <input required step="any" type="number" class="form-control" name="subtotal">
+                <br>
+                <label for="estado"><b>Estado</b></label><br>
+                <select required class="form-control" name="estado">
+                    <option value="Por pagar">Por pagar</option>
+                    <option value="Cancelado">Cancelado</option>
+                    </option>
+                </select>
+                <br>
+                <label for="foto"><b>Foto</b></label><br>
+                <input  type="file" class="form-control" name="foto">
+                <br><br>
+                <input type="submit" class="btn btn-success" class="bi bi-arrow-left" value="Guardar">
+                <a href="/comandas" class="btn btn-primary"> Regresar</a><br><br>
+            </div>
+    </form>
+</div>
+</body>
+</html>

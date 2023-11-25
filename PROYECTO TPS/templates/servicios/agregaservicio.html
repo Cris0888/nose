@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/CSS/estilos.css">
+    <script src="/Static/JS/Javascript.js"></script>
+    <title>Hotel Maravilla Natural</title>
+</head>
+<ul class="topnav">
+    <li><a href="/principal">Inicio</a></li>
+    <li><a href="#">Registro</a></li>
+    <li><a class="active" href="/servicios">Servicios</a></li>
+    <li><a href="/productos">Productos</a></li>
+    <li><a href="/Catalogo">Vehiculos</a></li>
+    <li><a href="/comandas">Ventas</a></li>
+    <li><a href="facturas">Facturación</a></li>
+    <li><a href="/">Salir</a></li>
+    <li class="right"><img src="/uploads/logo.jpg" alt=""></li>
+</ul>
+</div>
+<br>
+<br>
+<div class="container">
+    <form action="/guardaservicio" method="post" enctype="multipart/form-data">
+        <h3>Datos del nuevo servicio</h3><hr>
+        <div class="row">
+            <div class="col-6">
+                {{mensaje}}
+                <label for="numero"><b>Código servicio</b></label><br>
+                <input required type="number" class="form-control" name="numero">
+                <br>
+                <label for="nomServ"><b>Nombre del Servicio</b></label><br>
+                <input required type="text" class="form-control" name="nomServ">
+                <br>
+                <label for="descripcion"><b>Descripción</b></label><br>
+                <textarea required class="form-control" rows="1" name="descripcion"></textarea>
+                <br>
+                <label for="duracion"><b>Duración</b></label><br>
+                <input required type="number" class="form-control" name="duracion" value="1">
+                <br></div>
+                <div class="col-6">
+                <label for="precio"><b>Precio</b></label><br>
+                <input required type="number" class="form-control"  name="precio" value="0">
+                <br>
+                <label for="iva"><b>Impuesto (IVA)</b></label><br>
+                <input required step="any" type="number" class="form-control" name="iva">
+                <br>
+                <label for="estado"><b>Estado</b></label><br>
+                <select required class="form-control" name="estado">
+                    <option value="Por pagar">Por pagar</option>
+                    <option value="Cancelado">Cancelado</option>
+                    </option>
+                </select>
+            <br>
+                <label for="foto"><b>Foto</b></label><br>
+                <input type="file" class="form-control" name="foto">
+                <br><br>
+                <input type="submit" class="btn btn-success" class="bi bi-arrow-left" value="Guardar">
+                <a href="/servicios" class="btn btn-primary"> Regresar</a><br><br>
+            </div>   
+    </form>
+</div>

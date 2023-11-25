@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/CSS/estilos.css">
+    <script src="/Static/JS/Javascript.js"></script>
+    <title>Hotel Maravilla Natural</title>
+</head>
+<ul class="topnav">
+    <li><a href="/principal">Inicio</a></li>
+    <li><a href="#">Registro</a></li>
+    <li><a href="/servicios">Servicios</a></li>
+    <li><a class="active" href="/productos">Productos</a></li>
+    <li><a href="/Catalogo">Vehiculos</a></li>
+    <li><a href="/comandas">Ventas</a></li>
+    <li><a href="facturas">Facturación</a></li>
+    <li><a href="/">Salir</a></li>
+    <li class="right"><img src="/uploads/logo.jpg" alt=""></li>
+</ul>
+</div>
+<br>
+<div class="container">
+    <h3>Catálogo de productos</h3><hr>
+    <a href="/agregaproducto" class="btn btn-success btn-sm">
+        <i class="bi bi-basket"></i> Nuevo producto</a>
+    <br><br>
+    <table class="table table-hover table-sm">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Producto</th>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>IVA</th>
+                <th>Estado</th>
+               
+            <th colspan="2">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prod in res %}
+            <tr>
+                <td>{{prod[0]}}</td>
+                <td>{{prod[1]}}</td>
+                <td>{{prod[2]}}</td>
+                <td>{{prod[3]}}</td>
+                <td>{{prod[4]}}</td>
+                <td>{{prod[5]}}</td>
+                <td>{{prod[6]}}</td>
+                <td>
+                <td>
+                    <a href="/imprimirservicio{{prod[0]}}" class="btn btn-primary btn-sm"><i class="bi bi-printer"></i></a>
+                    <a href="/modificarproducto/{{prod[0]}}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
+                <a onclick="return confirm('¿Seguro elimina este producto?')" href="/borraproducto/{{prod[0]}}"
+                class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
+                </td>
+              
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>    
+</body>
+</html>

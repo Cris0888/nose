@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alquiler</title>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="/Agregaralquiler" >Agregaralquiler</a>
+        <a href="/Catalogo"class="active">Catalogo</a>
+        <a href="/" >Regresar</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    <br><br>
+    <hr>
+    <h1> Vehiculos Alquilados</h1>
+    
+    <hr>
+        <table class="tabla-responsive">
+        <thead>
+            <tr>
+                <th>Placa</th>
+                <th>Marca</th>
+                <th>Numero de Ocupacion</th>
+                <th>Estado</th>
+                <th>Consumo</th>
+                <th>Soat</th>
+                <th>Tecnico Mec</th>
+                <th>Kilometraje</th>
+                <th>Precio</th>
+                <th><a class="buttom" href="/agregarauto">Agregar</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pro in res %}
+            <tr>
+                <td>{{pro[0]}}</td>
+                <td>{{pro[1]}}</td>
+                <td>{{pro[2]}}</td>
+                <td>{{pro[3]}}</td>
+                <td>{{pro[4]}}</td>
+                <td>{{pro[5]}}</td>
+                <td>{{pro[6]}}</td>
+                <td>{{pro[7]}}</td>
+                <td>{{pro[8]}}</td>
+                <td>
+                    <a class="buttom" href="/modificaproducto/{{pro[0]}}">Modificar</a>
+                </td>
+                <td>
+                    <a class="buttom" onclick="return confirm('¿Seguro elimina este empleado?')" 
+                       href="/Borrarauto/{{pro[0]}}">Eliminar
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

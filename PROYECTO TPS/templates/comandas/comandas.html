@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/CSS/estilos.css">
+    <script src="/Static/JS/Javascript.js"></script>
+    <title>Hotel Maravilla Natural</title>
+</head>
+<ul class="topnav">
+    <li><a href="/principal">Inicio</a></li>
+    <li><a href="#">Registro</a></li>
+    <li><a href="/servicios">Servicios</a></li>
+    <li><a href="/productos">Productos</a></li>
+    <li><a href="/Catalogo">Vehiculos</a></li>
+    <li><a class="active" href="/comandas">Ventas</a></li>
+    <li><a href="facturas">Facturación</a></li>
+    <li><a href="/">Salir</a></li>
+    <li class="right"><img src="/uploads/logo.jpg" alt=""></li>
+</ul>
+<br>
+<div class="container">
+    <h3>Punto de Venta</h3><hr>
+    <a href="/agregacomanda" class="btn btn-success btn-sm">
+        <i class="bi bi-basket"></i> Venta de Productos</a>
+    <a href="#" class="btn btn-success btn-sm">
+        <i class="bi bi-briefcase"></i> Venta de Servicios</a>
+    <br><br>
+    <table class="table table-hover table-sm">
+        <thead>
+            <tr>
+                <th>Comanda</th>
+                <th>Categoria</th>
+                <th>Producto</th>
+                <th>Registro</th>
+                <th>Habitación</th>
+                <th>Fecha</th>
+                <th>Cantidad</th>
+                <th>Valor</th>
+                <th>Subtotal</th>
+                <th>Estado</th>
+            <th colspan="2">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for com in res %}
+            <tr>
+                <td>{{com[0]}}</td>
+                <td>{{com[1]}}</td>
+                <td>{{com[2]}}</td>
+                <td>{{com[3]}}</td>
+                <td>{{com[4]}}</td>
+                <td>{{com[5]}}</td>
+                <td>{{com[6]}}</td>
+                <td>{{com[7]}}</td>
+                <td>{{com[8]}}</td>
+                <td>{{com[9]}}</td> 
+                <td colspan="2">
+                    <a href="/modificacomanda/{{com[0]}}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
+                <a onclick="return confirm('¿Seguro elimina este coma?')" href="/borracomanda/{{com[0]}}"
+                class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
+                </td>
+              
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
